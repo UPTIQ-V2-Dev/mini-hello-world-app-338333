@@ -17,16 +17,16 @@ src/test/
 
 ```bash
 # Run tests in watch mode
-pnpm test
+npm test
 
 # Run tests once
-pnpm test:ci
+npm run test:ci
 
 # Run tests with UI
-pnpm test:ui
+npm run test:ui
 
 # Run tests with coverage
-pnpm test:coverage
+npm run test:coverage
 ```
 
 ## Writing Tests
@@ -46,7 +46,7 @@ describe('MyFunction', () => {
 
 ## Test Coverage
 
-Coverage reports are generated in the `coverage/` directory when running `pnpm test:coverage`.
+Coverage reports are generated in the `coverage/` directory when running `npm run test:coverage`.
 
 ## Configuration
 

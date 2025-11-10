@@ -22,8 +22,8 @@ start_server() {
         echo "Using custom start command: $START_COMMAND"
         $START_COMMAND &
     else
-        echo "Using default command: pnpm dev"
-        pnpm dev &
+        echo "Using default command: npm run dev"
+        npm run dev &
     fi
     SERVER_PID=$!
     echo "Server started with PID: $SERVER_PID"
@@ -53,7 +53,7 @@ while true; do
 
         if [ "$NEEDS_INSTALL" = true ]; then
             echo "Installing dependencies..."
-            CI=true pnpm install
+            CI=true npm install
             openssl md5 -r package.json | awk '{print $1}' > "$CHECKSUM_FILE"
             
             # Restart server after successful dependency installation
@@ -65,13 +65,13 @@ while true; do
             fi
         fi
     else
-        CI=true pnpm install
+        CI=true npm install
     fi
   sleep 30
 done &
 
 # Install dependencies
-pnpm install
+npm install
 
 # Start the server using the function
 start_server

@@ -1,7 +1,4 @@
 FROM node:22.17.0-alpine
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
 
 RUN apk add --no-cache openssl
 RUN apk add --no-cache git
@@ -23,8 +20,8 @@ USER node
 WORKDIR /app/project
 
 COPY package.json .
-COPY pnpm-lock.yaml .
-RUN pnpm install
+COPY package-lock.json* .
+RUN npm install
 
 EXPOSE 3000
 

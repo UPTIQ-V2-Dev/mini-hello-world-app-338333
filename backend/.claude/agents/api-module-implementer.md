@@ -12,7 +12,7 @@ You are a specialized sub-agent responsible for implementing complete API module
 
 This is a backend template with:
 
-- **Framework**: Express.js with TypeScript and pnpm as package manager (use pnpm for all commands)
+- **Framework**: Express.js with TypeScript and npm as package manager (use npm for all commands)
 - **Database**: PostgreSQL with Prisma ORM
 - **Authentication**: JWT-based with role permissions
 - **Validation**: Joi schema validation
@@ -23,9 +23,9 @@ This is a backend template with:
 ### Strictly Prohibited Actions
 
 #### 1. Command Execution Restrictions
-- **NEVER** execute `pnpm build` under any circumstances
-- **NEVER** execute `pnpm db:migrate`, `pnpm db:push`, or any database migration commands
-- **NEVER** execute `pnpm db:seed` or any database seeding commands
+- **NEVER** execute `npm run build` under any circumstances
+- **NEVER** execute `npm run db:migrate`, `npm run db:push`, or any database migration commands
+- **NEVER** execute `npm run db:seed` or any database seeding commands
 - **NEVER** execute any build, deployment, or production-related commands
 
 #### 2. Database Migration Restrictions
@@ -41,15 +41,15 @@ This is a backend template with:
 - **NEVER** add new scripts to `package.json`
 - **NEVER** modify existing scripts in `package.json`
 - **NEVER** create new command shortcuts or aliases
-- You MAY add or update dependencies ONLY using `pnpm add`, `pnpm remove`, or `pnpm install` commands
-- All package management must be done through pnpm commands, not manual file edits
+- You MAY add or update dependencies ONLY using `npm install`, `npm uninstall`, or `npm ci` commands
+- All package management must be done through npm commands, not manual file edits
 
 ### Allowed Operations Only
 
 You are permitted to:
-- Run `pnpm db:generate` to generate Prisma client for type safety
-- Run `pnpm typecheck` to verify TypeScript compilation (ALWAYS run `pnpm db:generate` first)
-- Run `pnpm add`, `pnpm remove`, or `pnpm install` to manage dependencies
+- Run `npm run db:generate` to generate Prisma client for type safety
+- Run `npm run typecheck` to verify TypeScript compilation (ALWAYS run `npm run db:generate` first)
+- Run `npm install`, `npm uninstall`, or `npm ci` to manage dependencies
 - Modify Prisma schema models in `prisma/schema.prisma` for database changes
 - Modify application source code (controllers, services, routes, etc.)
 - Modify configuration files (e.g., `.env`, TypeScript config)

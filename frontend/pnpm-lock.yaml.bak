@@ -1,0 +1,3 @@
+# This file was renamed to prevent pnpm usage
+# The project now uses npm with package-lock.json
+# Original pnpm-lock.yaml was moved to prevent build errors
